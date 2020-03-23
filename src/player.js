@@ -59,7 +59,7 @@ export class Bot extends Player {
   }
 
   randomHand() {
-    return this.possibleHand[randomInRange(2)];
+    return this.possibleHand[randomInRange(this.possibleHand.length)];
   }
 
   async nonPredictorAction() {
@@ -74,7 +74,7 @@ export class Bot extends Player {
   async predictorAction() {
     const hand1 = this.randomHand();
     const hand2 = this.randomHand();
-    const totalOpenHand = (hand1 === "O" + hand2) === "O";
+    const totalOpenHand = (hand1 === "O") + (hand2 === "O");
     return {
       hand1,
       hand2,

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node src/index.js"
   },
   "keywords": [],
   "author": "",

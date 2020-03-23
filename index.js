@@ -1,6 +1,6 @@
-import { InputManager } from "./inputManager";
-import { Player, Bot } from "./player";
-import { Game } from "./game";
+import { InputManager } from "./src/inputManager";
+import { Player, Bot } from "./src/player";
+import { Game } from "./src/game";
 
 async function main() {
   const player = new Player({ name: "Earth" });
@@ -8,7 +8,7 @@ async function main() {
   let isGameStart = true;
   while (isGameStart)
     try {
-      const GameBoard = new Game({ players: [bot, player] });
+      const GameBoard = new Game({ players: [player, bot] });
       await GameBoard.startGame();
 
       const inputManager = new InputManager();
